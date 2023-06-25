@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 	else if (*format == 'c')  /* handle character */
 	{
 		char ch = va_arg(args, int);
-
 		_putchar(ch);
 		count++;
 	}
@@ -44,11 +43,11 @@ int _printf(const char *format, ...)
 		}
 		}
 		else
-	{
-	_putchar(*format);
-	count++;
-	}
-	{
+		{
+			_putchar(*format);
+			count++;
+		}
+
 		format++;
 	}
 
