@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 /**
  * _putchar - writes the character c to stdout
@@ -16,10 +14,10 @@ int _putchar(char c)
 }
 
 /**
- * _printf - prints output
- * Return: number of printed char
- * Description: produce output format
+ * _printf - produce output format
+ * 
  * @format: str char
+ * Return: number of printed char
  */
 int _printf(const char *format, ...)
 {
