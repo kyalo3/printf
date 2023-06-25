@@ -1,6 +1,9 @@
-#include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
+
+int _putchar(char c)
+{	return write(1, &c, 1);
+}
 
 int _printf(const char *format, ...)
 {
@@ -11,43 +14,38 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '%')
-		{
-			format++;
+	if (*format == '%')
+	{	format++;
 
-			if (*format == '\0')  /* handle % at the end of the format string */
-				break;
+	if (*format == '\0')
+	break;
 
-	if (*format == '%')  /* handle literal % */
+	if (*format == '%')
 	{
-		_putchar('%');
-		count++;
+		count += _putchar('%');
 	}
-	else if (*format == 'c')  /* handle character */
+	else if (*format == 'c')
 	{
 		char ch = va_arg(args, int);
-		_putchar(ch);
-		count++;
+
+		count += _putchar(ch);
 	}
-	else if (*format == 's')  /* handle string */
+		else if (*format == 's')
 	{
 		char *str = va_arg(args, char *);
-		int i = 0;
 
+		int i = 0;
 		while (str[i])
 		{
-			_putchar(str[i]);
-			count++;
-			i++;
-		}
-		}
-		}
-		else
-		{
-			_putchar(*format);
-			count++;
-		}
-
+		count += _putchar(str[i]);
+		i++;
+	}
+	}
+	}
+	else
+	{
+		count += _putchar(*format);
+	}
 		format++;
 	}
 
