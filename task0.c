@@ -1,24 +1,15 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
  * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * _printf - produce output format
- * 
+ * _printf - prints the output format
  * @format: str char
- * Return: number of printed char
+ * @c: The character to print
+ * Return: On success 1
+ * On error, -1 is returned, and errno is set appropriately.
+ * Description: prints the format output
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
