@@ -2,6 +2,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ * _printf - prints output
+ * Return: number of printed char
+ * Description: produce output format
+ * @format: str char
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -26,6 +32,7 @@ int _printf(const char *format, ...)
 	else if (*format == 'c')  /* handle character */
 	{
 		char ch = va_arg(args, int);
+
 		_putchar(ch);
 		count++;
 	}
