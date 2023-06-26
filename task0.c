@@ -1,13 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _putchar - writes the character c to stdout
- * _printf - prints the output format
- * @format: str char
+ * _printf - function parameter
+ * @format: string character
  * @c: The character to print
  * Return: On success 1
  * On error, -1 is returned, and errno is set appropriately.
- * Description: prints the format output
+ * Description: prints the *format
  */
 
 int _printf(const char *format, ...)

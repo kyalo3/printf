@@ -4,16 +4,16 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#include <unistd.h>
 
 /**
  * _printf - Produces output according to a format.
  * @format: The format string
- *
+ * @c: char
  * Return: The number of characters printed
  */
 
-int _printf(const char *format, ...);
 int _putchar(char c);
+
+int _printf(const char *format, ...);
 
 #endif
