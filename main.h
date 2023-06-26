@@ -8,7 +8,8 @@
 #include <stdlib.h>
 /**
  * _printf - Produces output according to a format.
- * @format: The format string
+ * @*format: The format string
+ * _putchar - prints a character
  * @c: char
  * Return: The number of characters printed
  */
