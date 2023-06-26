@@ -2,8 +2,7 @@
 #include <stdlib.h>
 /**
  * _printf - function parameter
- * @format: string character
- * @c: The character to print
+ * @format: character strings
  * Return: On success 1
  * On error, -1 is returned, and errno is set appropriately.
  * Description: prints the *format
