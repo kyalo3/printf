@@ -34,7 +34,13 @@ int _printf(const char *format, ...)
 				{ _putchar(*str);
 					count++; }
 			}
-		}
+			else if (*format == 'd' || *format == 'i')
+			{
+				int i = va_arg(args, int);
+
+				_putchar('i');
+				count++;
+			}
 		else
 		{ _putchar(*format);
 			count++; }
