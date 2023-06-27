@@ -37,12 +37,13 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{ 
 				int i = va_arg(args, int); 
-				char str[100];
+				char * str = (char *) malloc(20*sizeof(char));
 				_itoa(str, i);
 
 				for (; *str; str++)
 				{ _putchar(*str);
 					count++; }
+				free(str);
 			}
 		}
 		else
