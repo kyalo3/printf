@@ -34,18 +34,6 @@ int _printf(const char *format, ...)
 				{ _putchar(*str);
 					count++; }
 			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				int i = va_arg(args, int);
-				char str[100];
-
-				itoa(i, str, 10);
-
-				for (; *str; str++)
-				{ _putchar(*str);
-					count++;
-				}
-			}
 		else
 		{ _putchar(*format);
 			count++; }
