@@ -19,4 +19,5 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 
+void _itoa(char * str, int i);
 #endif
