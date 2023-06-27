@@ -31,34 +31,16 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
-				break;
-			if (*format == '%')
-			{
-				_putchar('%');
-				count++;
-			}
-			else if (*format == 'c')
-			{
-				_putchar(va_arg(args, int));
-				count++;
-			}
-			else if (*format == 's')
-			{
+			if (*format == '\0') break;
+			if (*format == '%') { _putchar('%'); count++; }
+			else if (*format == 'c') { _putchar(va_arg(args, int)); count++; }
+			else if (*format == 's') {
 				char *str = va_arg(args, char *);
 
-				for (; *str; str++)
-				{
-					_putchar(*str);
-					count++;
-				}
+				for (; *str; str++) { _putchar(*str); count++; }
 			}
 		}
-		else
-		{
-			_putchar(*format);
-			count++;
-		}
+		else { _putchar(*format); count++; }
 		format++;
 	}
 
