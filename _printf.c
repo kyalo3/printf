@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 				for (; *str; str++)
 				{ _putchar(*str);
 					count++; }
-				free(str);
+				// free(str);
 			}
 		}
 		else
