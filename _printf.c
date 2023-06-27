@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
                         {
                                 char *str = va_arg(args, char *);
 
+<<<<<<< HEAD
                                 for (; *str; str++)
                                 { _putchar(*str);
                                         count++; }
@@ -43,4 +44,18 @@ int _printf(const char *format, ...)
 
         va_end(args);
         return (count);
+=======
+				for (; *str; str++)
+				{ _putchar(*str);
+					count++; }
+			}
+		else
+		{ _putchar(*format);
+			count++; }
+		format++;
+	}
+	}
+	va_end(args);
+	return (count);
+>>>>>>> 0491dc608527d3c202b822260c5b4be9263a3f43
 }
