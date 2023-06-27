@@ -14,18 +14,18 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '%%')
+		if (*format == "%%")
 		{
 			format++;
-			if (*format == '\0')
+			if (*format == "\0")
 			break;
-			if (*format == '%%')
-			{ _putchar('%%');
+			if (*format == "%%")
+			{ _putchar("%%");
 				count++; }
-			else if (*format == '%c')
+			else if (*format == "%c")
 			{ _putchar(va_arg(args, int));
 				count++; }
-			else if (*format == '%s')
+			else if (*format == "%s")
 			{
 				char *str = va_arg(args, char *);
 
