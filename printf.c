@@ -39,15 +39,12 @@ int _printf(const char *format, ...)
 				int i = va_arg(args, int);
 
 				_putchar('i');
-				count++;
-			}
+				count++; }
 		else
 		{ _putchar(*format);
-			count++; }
-		}
+			count++; }}
 		format++;
 	}
-
 	va_end(args);
-	return count;
+	return (count);
 }
