@@ -6,7 +6,6 @@
  *
  * Return: number of printed char
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -20,33 +19,25 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-				break;
+			break;
 			if (*format == '%')
-			{
-				_putchar('%');
-				count++;
-			}
+			{ _putchar('%');
+				count++; }
 			else if (*format == 'c')
-			{
-				_putchar(va_arg(args, int));
-				count++;
-			}
+			{ _putchar(va_arg(args, int));
+				count++; }
 			else if (*format == 's')
 			{
 				char *str = va_arg(args, char *);
 
 				for (; *str; str++)
-				{
-					_putchar(*str);
-					count++;
-				}
+				{ _putchar(*str);
+					count++; }
 			}
 		}
 		else
-		{
-			_putchar(*format);
-			count++;
-		}
+		{ _putchar(*format);
+			count++; }
 		format++;
 	}
 
