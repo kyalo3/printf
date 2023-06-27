@@ -39,9 +39,10 @@ int _printf(const char *format, ...)
 				int i = va_arg(args, int); 
 				char str[100];
 				_itoa(str, i);
+
 				for (; *str; str++)
 				{ _putchar(*str);
-				count++; }
+					count++; }
 			}
 		}
 		else
