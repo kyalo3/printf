@@ -13,11 +13,13 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format == '\0')
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+			break;
 			if (*format == '%')
 			{ _putchar('%');
 				count++; }
