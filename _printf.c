@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printf - prints the *format
  * @format: character string
@@ -12,13 +13,11 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format)
+	while (*format == '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
-			break;
 			if (*format == '%')
 			{ _putchar('%');
 				count++; }
