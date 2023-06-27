@@ -26,7 +26,7 @@ void _itoa(char * str, int i)
 	{
 		rem = i % 10; 
 		i /= 10; 
-		*str = '0' + rem; 
+		*str = 48 + rem; 
 		str++;
 		if (i ==0)
 		{
