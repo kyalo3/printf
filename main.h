@@ -11,12 +11,11 @@
  * @*format: The format string
  * _putchar - prints a character
  * @c: char
- * @r: format specifier
  * Return: The number of characters printed
  */
 
 int _putchar(char c);
-
 int _printf(const char *format, ...);
+void _itoa(char *str, int i);
 
 #endif
