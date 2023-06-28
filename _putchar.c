@@ -13,7 +13,14 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-void _itoa(char * str, int i)
+/**
+ * _itoa - convert int to string
+ * @str: The character string
+ * @i: The integer
+ *
+ * Return: void
+ */
+void _itoa(char *str, int i)
 {
 	int rem;
 
@@ -21,7 +28,8 @@ void _itoa(char * str, int i)
 	{
 		*str = '-'; 
 		str++; 
-		i *= -1;}
+		i *= -1;
+	}
 	while (1)
 	{
 		rem = i % 10; 
