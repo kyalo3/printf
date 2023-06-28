@@ -11,7 +11,6 @@
  * @*format: The format string
  * _putchar - prints a character
  * @c: char
- * @r: format specifier
  * Return: The number of characters printed
  */
 
