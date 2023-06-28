@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			{
 				int i = va_arg(args, int);
 				char *str = (char *) malloc(20 * sizeof(char));
-				
+
 				_itoa(str, i);
 
 				for (; *str; str++)
