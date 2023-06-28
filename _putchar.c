@@ -26,19 +26,19 @@ void _itoa(char *str, int i)
 
 	if (i < 0)
 	{
-		*str = '-'; 
-		str++; 
+		*str = '-';
+		str++;
 		i *= -1;
 	}
 	while (1)
 	{
-		rem = i % 10; 
-		i /= 10; 
-		*str = 48 + rem; 
+		rem = i % 10;
+		i /= 10;
+		*str = 48 + rem;
 		str++;
-		if (i ==0)
+		if (i == 0)
 		{
-			str++; 
+			str++;
 			*str = '\0';
 			break;
 		}
