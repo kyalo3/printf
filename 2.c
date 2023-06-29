@@ -19,13 +19,13 @@ int _printf(const char *format, ...)
 	if (*format == '%')
 	{
 		format++;
-    if (*format == 'b')
+        if (*format == 'b')
 	{
-        unsigned int num;
-        int printed = 0;
+    unsigned int num;
+    int printed = 0;
 
-        if (sizeof(unsigned int) == sizeof(int)
-        { 
+    if (sizeof(unsigned int) == sizeof(int)
+        {
             num = va_arg(args, unsigned int);
         }
         else
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
         }
         for (int bit = sizeof(num) * 8 - 1; bit >= 0; bit--)
         {
-            __putchar((num & (1u << bit)) ? '1' : '0');
+            _putchar((num & (1u << bit)) ? '1' : '0');
             count++;
             printed++;
         }
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
         }
     }
     }
-    else 
+    else
     {
         _putchar(*format);
         count++;
