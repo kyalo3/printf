@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			}
 			for (int j = i - 1; j >= 0; j--)
 			{
-				_printf("%d", bin[j]);
+				_putchar(bin[j]+ '0');
 				count++;
 			}
 			format += 2;
