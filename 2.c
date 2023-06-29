@@ -21,26 +21,33 @@ int _printf(const char *format, ...)
 		format++;
     if (*format == 'b')
 	{
-        unsigned int num = va_arg(args, unsigned int);
-        int bit;
+        unsigned int num;
         int printed = 0;
-        
-        for (int bit = sizeof(unsigned int) * 8 - 1; bit >= 0; bit--)
+
+        if (sizeof(unsigned int) == sizeof(int)
+        { 
+            num = va_arg(args, unsigned int);
+        }
+        else
         {
-            putchar((num & (1u << bit)) ? '1' : '0');
+            num = va_arg(args, int);
+        }
+        for (int bit = sizeof(num) * 8 - 1; bit >= 0; bit--)
+        {
+            __putchar((num & (1u << bit)) ? '1' : '0');
             count++;
             printed++;
         }
         if (printed == 0)
         {
-            putchar('0');
+            _putchar('0');
             count++;
         }
     }
     }
     else 
     {
-        putchar(*format);
+        _putchar(*format);
         count++;
     }
     format++;
