@@ -15,45 +15,37 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format)
+	while (*format != '\0')
 	{
 	if (*format == '%')
 	{
 		format++;
-        if (*format == 'b')
-	{
-    unsigned int num;
-    int printed = 0;
+		if (*format == 'b')
+		{
+			unsigned int num = va_arg(args, unsigned int);
+			int bin[32], i = 0;
 
-    if (sizeof(unsigned int) == sizeof(int)
-        {
-            num = va_arg(args, unsigned int);
-        }
-        else
-        {
-            num = va_arg(args, int);
-        }
-        for (int bit = sizeof(num) * 8 - 1; bit >= 0; bit--)
-        {
-            _putchar((num & (1u << bit)) ? '1' : '0');
-            count++;
-            printed++;
-        }
-        if (printed == 0)
-        {
-            _putchar('0');
-            count++;
-        }
-    }
-    }
-    else
-    {
-        _putchar(*format);
-        count++;
-    }
-    format++;
-    }
+			while (num > 0)
+			{
+				bin[i] = num % 2;
+				num /= 2;
+				i++;
+			}
+			for (int j = i - 1; j >= 0; j--)
+			{
+				_printf("%d", bin[j]);
+				count++;
+			}
+			format += 2;
+			continue;
+		}
+	}
 
-    va_end(args);
-    return (count);
+	_putchar(*format);
+	count++;
+	format++;
+	}
+
+	va_end(args);
+	return (count);
 }
