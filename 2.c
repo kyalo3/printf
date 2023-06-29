@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
         int bit;
         int printed = 0;
         
-        for (bit = sizeof(unsigned int) * 8 - 1; bit >= 0; bit--)
+        for (int bit = sizeof(unsigned int) * 8 - 1; bit >= 0; bit--)
         {
             putchar((num & (1u << bit)) ? '1' : '0');
             count++;
