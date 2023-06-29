@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	if (*format == '%')
 	{
 		format++;
-<<<<<<< HEAD
+
 	if (*format == 'b')
 	{
 	unsigned int num = va_arg(args, unsigned int);
@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 	putchar(*format);
 	count++; }
 	format++; }
-=======
+
 		if (*format == 'b')
 		{
 			unsigned int num = va_arg(args, unsigned int);
@@ -65,10 +65,10 @@ int _printf(const char *format, ...)
 	}
 
 	_putchar(*format);
-	count++;
+	count++; }
 	format++;
 	}
->>>>>>> 87de41b68b14d4f429e849357c498b4351168a00
+
 
 	va_end(args);
 	return (count);
