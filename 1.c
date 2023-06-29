@@ -1,10 +1,10 @@
-#include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
 /**
  * _printf - a function that produces output according to a format.
  * Return: the number of characters printed
  * @format: character string
+ *
  */
 
 int _printf(const char *format, ...)
@@ -14,62 +14,26 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format != '\0')
+	while (*format)
 	{
 	if (*format == '%')
 	{
 		format++;
-<<<<<<< HEAD
-	if (*format == 'b')
-	{
-	unsigned int num = va_arg(args, unsigned int);
-	int bit;
-	int printed = 0;
 
-	for (bit = sizeof(unsigned int) * 8 - 1; bit >= 0; bit--)
+	if (*format == 'd' || *format == 'i')
 	{
-		putchar((num & (1u << bit)) ? '1' : '0');
-		count++;
-		printed++; }
-	if (printed == 0)
-	{
-		putchar('0');
-		count++; }
+		int num = va_arg(args, int);
+
+		count += printf("%d", num);
 	}
 	}
 	else
 	{
-	putchar(*format);
-	count++; }
-	format++; }
-=======
-		if (*format == 'b')
-		{
-			unsigned int num = va_arg(args, unsigned int);
-			int bin[32], i = 0;
-
-			while (num > 0)
-			{
-				bin[i] = num % 2;
-				num /= 2;
-				i++;
-			}
-			for (int j = i - 1; j >= 0; j--)
-			{
-				_putchar(bin[j]+ '0');
-				count++;
-			}
-			format += 2;
-			continue;
-		}
-	}
-
-	_putchar(*format);
-	count++;
-	format++;
-	}
->>>>>>> 87de41b68b14d4f429e849357c498b4351168a00
+		putchar(*format);
+		count++; }
+		format++; }
 
 	va_end(args);
+
 	return (count);
 }
