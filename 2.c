@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
 /**
@@ -13,11 +14,12 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format)
+	while (*format != '\0')
 	{
 	if (*format == '%')
 	{
 		format++;
+<<<<<<< HEAD
 	if (*format == 'b')
 	{
 	unsigned int num = va_arg(args, unsigned int);
@@ -40,6 +42,33 @@ int _printf(const char *format, ...)
 	putchar(*format);
 	count++; }
 	format++; }
+=======
+		if (*format == 'b')
+		{
+			unsigned int num = va_arg(args, unsigned int);
+			int bin[32], i = 0;
+
+			while (num > 0)
+			{
+				bin[i] = num % 2;
+				num /= 2;
+				i++;
+			}
+			for (int j = i - 1; j >= 0; j--)
+			{
+				_putchar(bin[j]+ '0');
+				count++;
+			}
+			format += 2;
+			continue;
+		}
+	}
+
+	_putchar(*format);
+	count++;
+	format++;
+	}
+>>>>>>> 87de41b68b14d4f429e849357c498b4351168a00
 
 	va_end(args);
 	return (count);
